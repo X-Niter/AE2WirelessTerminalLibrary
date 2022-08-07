@@ -1,23 +1,198 @@
 buildscript {
 	repositories {
-		jcenter()
-		maven {
-			name = "forge"
-			url = "http://files.minecraftforge.net/maven"
-		}
+		gradlePluginPortal()
 		maven {
 			url "https://plugins.gradle.org/m2/"
 		}
+		maven {
+			url 'https://gitlab.com/api/v4/projects/26758973/packages/maven'
+		}
+		maven {
+			name 'ForgeGradle 5'
+			url 'https://maven.minecraftforge.net'
+		}
 	}
 	dependencies {
-		classpath "net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT"
-		if (project.hasProperty("curseId")) {
-			classpath "gradle.plugin.com.matthewprenger:CurseGradle:1.1.0"
+		classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+	}
+}
+
+plugins {
+	id 'wtf.gofancy.fancygradle' version '1.+'
+}
+
+apply plugin: 'net.minecraftforge.gradle'
+
+version = "${mod_version}"
+group = project.maven_group
+archivesBaseName = "${project.archives_base_name}-1.12.2"
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(8)
+
+minecraft {
+
+	mappings channel: 'stable', version: '39-1.12'
+
+	accessTransformer = file('src/main/resources/ae2wtlib_at.cfg')
+
+	if (project.hasProperty("signSHA1")) {
+		replace '@FINGERPRINT@', project.findProperty('signSHA1')
+	}
+
+	runs {
+		client {
+			workingDirectory project.file('run/client')
+			property 'forge.logging.markers', 'REGISTRIES'
+			property 'forge.logging.console.level', 'debug'
+		}
+
+		server {
+			workingDirectory project.file('run/server')
+			property 'forge.logging.markers', 'REGISTRIES'
+			property 'forge.logging.console.level', 'debug'
+			mods {
+				'${archives_base_name}' {
+					source sourceSets.main
+				}
+			}
 		}
 	}
 }
 
-apply from : 'https://github.com/p455w0rd/buildscripts/raw/master/base.gradle'
-apply from : 'https://github.com/p455w0rd/buildscripts/raw/master/ae2.gradle'
-apply from : 'https://github.com/p455w0rd/buildscripts/raw/master/rf.gradle'
-apply from : 'https://github.com/p455w0rd/buildscripts/raw/master/baubles.gradle'
+repositories {
+	maven {
+		url = 'https://maven.cleanroommc.com'
+	}
+	maven {
+		url = 'https://repo.spongepowered.org/maven'
+	}
+	maven {
+		name = "CurseMaven"
+		url = "https://www.cursemaven.com"
+	}
+	maven {
+		url "https://cursemaven.com"
+		content {
+			includeGroup "curse.maven"
+		}
+	}
+}
+
+dependencies {
+	minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2860'
+
+	implementation fg.deobf("curse.maven:ae2-extended-life-570458:3888235")
+	implementation fg.deobf("curse.maven:jei-238222:3040523")
+	implementation fg.deobf("curse.maven:p455w0rds-library-255232:2830265")
+	implementation fg.deobf("curse.maven:the-one-probe-245211:2667280")
+	implementation fg.deobf("curse.maven:hwyla-253449:2568751")
+	implementation fg.deobf("curse.maven:baubles-lts-655747:3916343")
+	implementation fg.deobf("curse.maven:cofh-core-69162:2920433")
+	implementation fg.deobf("curse.maven:redstone-flux-270789:2920436")
+
+}
+
+fancyGradle {
+	patches {
+		resources
+		coremods
+		asm
+	}
+}
+
+
+// Create deobf dev jars
+task deobfJar(type: Jar) {
+	from sourceSets.main.output
+	classifier = 'deobf'
+}
+
+// Create API library jar
+task apiZip(type: Jar) {
+	duplicatesStrategy = 'include'
+	from(sourceSets.main.java) {
+		include "baubles/api/**"
+	}
+	from(sourceSets.main.output) {
+		include "baubles/api/**"
+	}
+
+	classifier = 'api'
+}
+
+task sourcesJar(type: Jar) {
+	from sourceSets.main.allJava
+	classifier = 'sources'
+}
+
+sourceSets {
+	main {
+
+		java {
+			srcDirs = ["src/main/java"]
+		}
+
+		resources {
+			srcDirs = ["src/main/java", "src/main/resources"]
+		}
+	}
+
+	test {
+		java {
+			srcDirs = ["src/test/java"]
+		}
+		resources {
+			srcDirs = ["src/test/resources"]
+		}
+	}
+
+	// at compile time, put resources in same directories as classes
+	main.output.setResourcesDir(main.java.outputDir)
+}
+
+jar {
+	manifest {
+		// noinspection GroovyAssignabilityCheck
+		def attribute_map = [:]
+		if (project.use_coremod.toBoolean()) {
+			attribute_map['FMLCorePlugin'] = project.coremod_plugin_class_name
+			if (project.include_mod.toBoolean()) {
+				attribute_map['FMLCorePluginContainsFMLMod'] = true
+				attribute_map['ForceLoadAsMod'] = project.gradle.startParameter.taskNames[0] == 'build'
+			}
+		}
+		if (project.use_mixins.toBoolean()) {
+			attribute_map['TweakClass'] = 'org.spongepowered.asm.launch.MixinTweaker'
+		}
+		attributes(attribute_map)
+	}
+}
+
+artifacts {
+	archives deobfJar
+	archives apiZip
+	archives sourcesJar
+}
+
+jar.finalizedBy('reobfJar')
+
+processResources {
+	// required to allow file expansion later
+	duplicatesStrategy = 'include'
+
+	// this will ensure that this task is redone when the versions change.
+	inputs.property 'version', version
+
+	// replace stuff in mcmod.info, nothing else
+	from(sourceSets.main.resources.srcDirs) {
+		include 'mcmod.info'
+
+		// replace version and mcversion
+		expand 'version': version
+	}
+
+	// copy everything else except the mcmod.info
+	from(sourceSets.main.resources.srcDirs) {
+		exclude 'mcmod.info'
+	}
+}

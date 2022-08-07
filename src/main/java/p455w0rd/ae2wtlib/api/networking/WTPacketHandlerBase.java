@@ -56,12 +56,7 @@ public class WTPacketHandlerBase {
 			try {
 				x = packetClass.getConstructor(ByteBuf.class);
 			}
-			catch (final NoSuchMethodException ignored) {
-			}
-			catch (final SecurityException ignored) {
-			}
-			catch (final DecoderException ignored) {
-			}
+			catch (final NoSuchMethodException | SecurityException | DecoderException ignored) {}
 
 			packetConstructor = x;
 			REVERSE_LOOKUP.put(packetClass, this);

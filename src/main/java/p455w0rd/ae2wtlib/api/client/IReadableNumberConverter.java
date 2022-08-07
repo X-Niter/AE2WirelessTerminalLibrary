@@ -30,9 +30,9 @@ public interface IReadableNumberConverter {
 	String toSlimReadableForm(@Nonnegative long number);
 
 	/**
-	 * Converts a number into a human readable form. It will not round the number, but down it.
+	 * Converts a number into a human-readable form. It will not round the number, but down it.
 	 * Will try to cut the number down 1 decimal later if width can be below 4.
-	 * Can only handle non negative numbers
+	 * Can only handle non-negative numbers
 	 *
 	 * Example:
 	 * 10000L -> 10K

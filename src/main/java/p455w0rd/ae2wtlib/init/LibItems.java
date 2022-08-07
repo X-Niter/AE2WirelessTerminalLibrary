@@ -20,7 +20,7 @@ public class LibItems {
 			BOOSTER_CARD, ULTIMATE_TERMINAL, CREATIVE_ULTIMATE_TERMINAL
 	};
 
-	public static final void register(final RegistryEvent.Register<Item> event) {
+	public static void register(final RegistryEvent.Register<Item> event) {
 		event.getRegistry().registerAll(ITEM_ARRAY);
 		WTApi.instance().getWirelessTerminalRegistry().registerWirelessTerminal(ULTIMATE_TERMINAL, CREATIVE_ULTIMATE_TERMINAL);
 		AE2WTLib.PROXY.registerCustomRenderer(BOOSTER_CARD);

@@ -8,6 +8,8 @@ import net.minecraft.network.PacketThreadUtil;
 import net.minecraftforge.fml.common.network.internal.FMLProxyPacket;
 import p455w0rd.ae2wtlib.api.networking.*;
 
+import java.util.Objects;
+
 public final class WTServerPacketHandler extends WTPacketHandlerBase implements IPacketHandler {
 
 	private static final WTServerPacketHandler INSTANCE = new WTServerPacketHandler();
@@ -33,7 +35,7 @@ public final class WTServerPacketHandler extends WTPacketHandlerBase implements 
 			};
 
 			pack.setCallParam(callState);
-			PacketThreadUtil.checkThreadAndEnqueue(pack, handler, ((EntityPlayerMP) player).getServer());
+			PacketThreadUtil.checkThreadAndEnqueue(pack, handler, Objects.requireNonNull((player).getServer()));
 			callState.call(pack);
 		}
 		catch (final Exception e) {

@@ -24,7 +24,6 @@ public class SlotSingleItem extends Slot {
 		this.delegate = delegate;
 	}
 
-	@Nullable
 	@Override
 	public ItemStack getStack() {
 		ItemStack orgStack = delegate.getStack();

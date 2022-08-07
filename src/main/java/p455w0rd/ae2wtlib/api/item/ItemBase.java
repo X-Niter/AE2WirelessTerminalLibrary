@@ -21,7 +21,7 @@ public class ItemBase extends Item implements IModelHolder {
 
 	public ItemBase(final ResourceLocation registryName) {
 		setRegistryName(registryName);
-		setUnlocalizedName(registryName.toString());
+		setTranslationKey(registryName.toString());
 		setMaxStackSize(64);
 		setCreativeTab(LibCreativeTab.CREATIVE_TAB);
 	}

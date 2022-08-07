@@ -552,8 +552,8 @@ public class ContainerWT extends AEBaseContainer implements IWTContainer, IConfi
 				inventoryItemStacks.set(i, itemstack1);
 
 				if (clientStackChanged) {
-					for (int j = 0; j < listeners.size(); ++j) {
-						listeners.get(j).sendSlotContents(this, i, itemstack1);
+					for (IContainerListener listener : listeners) {
+						listener.sendSlotContents(this, i, itemstack1);
 					}
 				}
 			}
@@ -562,10 +562,7 @@ public class ContainerWT extends AEBaseContainer implements IWTContainer, IConfi
 
 	@Override
 	public boolean canInteractWith(final EntityPlayer entityplayer) {
-		if (isValidContainer()) {
-			return true;
-		}
-		return false;
+		return isValidContainer();
 	}
 
 	@Override

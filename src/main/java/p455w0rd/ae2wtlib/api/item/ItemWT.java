@@ -63,7 +63,7 @@ public abstract class ItemWT extends AEBasePoweredItem implements ICustomWireles
 	protected ItemWT(final ResourceLocation registryName) {
 		super(LibConfig.WT_MAX_POWER);
 		setRegistryName(registryName);
-		setUnlocalizedName(registryName.toString());
+		setTranslationKey(registryName.toString());
 		setMaxStackSize(1);
 		setCreativeTab(LibCreativeTab.CREATIVE_TAB);
 	}
@@ -211,8 +211,8 @@ public abstract class ItemWT extends AEBasePoweredItem implements ICustomWireles
 	public boolean isBookEnchantable(final ItemStack stack, final ItemStack book) {
 		final Map<Enchantment, Integer> bookEnchants = EnchantmentHelper.getEnchantments(book);
 		final Map<Enchantment, Integer> itemEnchants = EnchantmentHelper.getEnchantments(stack);
-		final boolean isBookValid = bookEnchants.size() == 1 && bookEnchants.keySet().stream().map(Enchantment::getRegistryName).map(ResourceLocation::getResourcePath).allMatch(validEnchantNames::contains);
-		final boolean isItemValid = itemEnchants.size() == 0 || !itemEnchants.keySet().stream().map(Enchantment::getRegistryName).map(ResourceLocation::getResourcePath).allMatch(validEnchantNames::contains);
+		final boolean isBookValid = bookEnchants.size() == 1 && bookEnchants.keySet().stream().map(Enchantment::getRegistryName).filter(Objects::nonNull).map(ResourceLocation::getPath).allMatch(validEnchantNames::contains);
+		final boolean isItemValid = itemEnchants.size() == 0 || !itemEnchants.keySet().stream().map(Enchantment::getRegistryName).filter(Objects::nonNull).map(ResourceLocation::getPath).allMatch(validEnchantNames::contains);
 		return isBookValid && isItemValid;
 	}
 

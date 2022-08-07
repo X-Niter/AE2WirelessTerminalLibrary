@@ -77,4 +77,15 @@ public interface ICustomWirelessTerminalItem extends IWirelessTermHandler, IAEIt
 	 */
 	ResourceLocation getMenuIcon();
 
+    @Optional.Method(modid = "redstoneflux")
+    int receiveEnergy(ItemStack is, int maxReceive, boolean simulate);
+
+	@Optional.Method(modid = "redstoneflux")
+	int extractEnergy(ItemStack container, int maxExtract, boolean simulate);
+
+	@Optional.Method(modid = "redstoneflux")
+	int getEnergyStored(ItemStack is);
+
+	@Optional.Method(modid = "redstoneflux")
+	int getMaxEnergyStored(ItemStack is);
 }

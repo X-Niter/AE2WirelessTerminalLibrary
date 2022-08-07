@@ -22,7 +22,7 @@ public class SlotAEBauble extends AppEngSlot {
 
 	@Override
 	public boolean canTakeStack(final EntityPlayer player) {
-		return (!(!(player.openContainer instanceof ContainerWT)) && (!(getStack().getItem() instanceof ICustomWirelessTerminalItem)));
+		return ((!(player.openContainer instanceof ContainerWT)) && (!(getStack().getItem() instanceof ICustomWirelessTerminalItem)));
 	}
 
 	@Override

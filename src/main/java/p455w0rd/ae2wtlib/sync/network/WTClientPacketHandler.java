@@ -12,7 +12,7 @@ public class WTClientPacketHandler extends WTPacketHandlerBase implements IPacke
 
 	private static final WTClientPacketHandler INSTANCE = new WTClientPacketHandler();
 
-	public static final WTClientPacketHandler instance() {
+	public static WTClientPacketHandler instance() {
 		return INSTANCE;
 	}
 

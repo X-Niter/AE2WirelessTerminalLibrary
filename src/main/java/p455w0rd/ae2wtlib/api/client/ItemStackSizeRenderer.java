@@ -15,7 +15,7 @@ public class ItemStackSizeRenderer extends StackSizeRenderer<IAEItemStack> {
 
 	private static final ItemStackSizeRenderer INSTANCE = new ItemStackSizeRenderer();
 
-	public static final ItemStackSizeRenderer getInstance() {
+	public static ItemStackSizeRenderer getInstance() {
 		return INSTANCE;
 	}
 

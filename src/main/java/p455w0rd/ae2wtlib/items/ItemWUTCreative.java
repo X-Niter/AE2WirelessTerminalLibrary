@@ -11,7 +11,6 @@ import p455w0rd.ae2wtlib.init.LibItems;
 
 /**
  * @author p455w0rd
- *
  */
 public class ItemWUTCreative extends ItemWUT {
 
@@ -33,11 +32,6 @@ public class ItemWUTCreative extends ItemWUT {
 	@Override
 	public double getAECurrentPower(final ItemStack wirelessTerm) {
 		return WTApi.instance().getConfig().getWTMaxPower();
-	}
-
-	@Override
-	public EnumRarity getRarity(final ItemStack wirelessTerm) {
-		return EnumRarity.RARE;
 	}
 
 	@Override

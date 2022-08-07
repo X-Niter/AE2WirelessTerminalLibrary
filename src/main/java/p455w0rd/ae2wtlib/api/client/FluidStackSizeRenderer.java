@@ -17,7 +17,7 @@ public class FluidStackSizeRenderer extends StackSizeRenderer<IAEFluidStack> {
 
 	private static final FluidStackSizeRenderer INSTANCE = new FluidStackSizeRenderer();
 
-	public static final FluidStackSizeRenderer getInstance() {
+	public static FluidStackSizeRenderer getInstance() {
 		return INSTANCE;
 	}
 
