@@ -111,10 +111,10 @@ task deobfJar(type: Jar) {
 task apiZip(type: Jar) {
 	duplicatesStrategy = 'include'
 	from(sourceSets.main.java) {
-		include "baubles/api/**"
+		include "p455w0rd/ae2wtlib/api/**"
 	}
 	from(sourceSets.main.output) {
-		include "baubles/api/**"
+		include "p455w0rd/ae2wtlib/api/**"
 	}
 
 	classifier = 'api'
