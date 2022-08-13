@@ -30,7 +30,7 @@ import java.util.Set;
 public abstract class WTApi {
 
 	public static final String MODID = "ae2wtlib";
-	public static final String VERSION = "1.0.8.0";
+	public static final String VERSION = "1.0.35";
 	public static final String AE2_DEP = "required-after:appliedenergistics2@[rv6-stable-7,);";
 	public static final String AE2WTLIB_DEP = "required-after:" + MODID + "@[" + VERSION + ",);";
 	public static final String BAUBLES_DEP = "after:baubles;";
