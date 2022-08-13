@@ -1,26 +1,37 @@
 package p455w0rd.ae2wtlib.helpers;
 
-import java.util.List;
-
-import com.google.common.collect.Lists;
-
 import appeng.api.AEApi;
-import appeng.api.config.*;
+import appeng.api.config.AccessRestriction;
+import appeng.api.config.Actionable;
+import appeng.api.config.PowerMultiplier;
 import appeng.api.features.ILocatable;
 import appeng.api.features.IWirelessTermHandler;
 import appeng.api.implementations.tiles.IWirelessAccessPoint;
-import appeng.api.networking.*;
+import appeng.api.networking.IGrid;
+import appeng.api.networking.IGridHost;
+import appeng.api.networking.IGridNode;
+import appeng.api.networking.IMachineSet;
 import appeng.api.networking.security.IActionSource;
 import appeng.api.networking.storage.IStorageGrid;
-import appeng.api.storage.*;
+import appeng.api.storage.IMEMonitor;
+import appeng.api.storage.IMEMonitorHandlerReceiver;
+import appeng.api.storage.IStorageChannel;
 import appeng.api.storage.data.IAEStack;
 import appeng.api.storage.data.IItemList;
-import appeng.api.util.*;
+import appeng.api.util.AECableType;
+import appeng.api.util.AEPartLocation;
+import appeng.api.util.DimensionalCoord;
+import appeng.api.util.IConfigManager;
 import appeng.tile.networking.TileWireless;
+import com.google.common.collect.Lists;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import p455w0rd.ae2wtlib.api.*;
+import p455w0rd.ae2wtlib.api.ICustomWirelessTerminalItem;
+import p455w0rd.ae2wtlib.api.WTApi;
+import p455w0rd.ae2wtlib.api.WTGuiObject;
+
+import java.util.List;
 
 public class WTGuiObjectImpl<O extends IAEStack<O>, C extends IStorageChannel<O>> extends WTGuiObject<O> {
 

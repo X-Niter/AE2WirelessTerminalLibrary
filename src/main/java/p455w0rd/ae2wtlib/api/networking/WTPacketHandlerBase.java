@@ -15,14 +15,14 @@
  */
 package p455w0rd.ae2wtlib.api.networking;
 
+import io.netty.buffer.ByteBuf;
+import io.netty.handler.codec.DecoderException;
+import p455w0rd.ae2wtlib.sync.packets.*;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
-
-import io.netty.buffer.ByteBuf;
-import io.netty.handler.codec.DecoderException;
-import p455w0rd.ae2wtlib.sync.packets.*;
 
 public class WTPacketHandlerBase {
 	private static final Map<Class<? extends WTPacket>, PacketTypes> REVERSE_LOOKUP = new HashMap<Class<? extends WTPacket>, WTPacketHandlerBase.PacketTypes>();

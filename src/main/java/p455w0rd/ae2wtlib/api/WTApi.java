@@ -1,19 +1,14 @@
 package p455w0rd.ae2wtlib.api;
 
-import java.lang.reflect.Method;
-import java.util.Set;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
-import org.apache.commons.lang3.tuple.Pair;
-
 import appeng.api.implementations.tiles.IWirelessAccessPoint;
 import appeng.bootstrap.FeatureFactory;
 import appeng.container.slot.AppEngSlot;
 import appeng.core.Api;
 import appeng.core.ApiDefinitions;
-import appeng.core.api.definitions.*;
+import appeng.core.api.definitions.ApiBlocks;
+import appeng.core.api.definitions.ApiItems;
+import appeng.core.api.definitions.ApiMaterials;
+import appeng.core.api.definitions.ApiParts;
 import appeng.tile.inventory.AppEngInternalInventory;
 import appeng.util.inv.IAEAppEngInventory;
 import net.minecraft.entity.player.EntityPlayer;
@@ -23,8 +18,14 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandler;
+import org.apache.commons.lang3.tuple.Pair;
 import p455w0rd.ae2wtlib.api.client.IWTGuiScrollbar;
 import p455w0rd.ae2wtlib.items.ItemInfinityBooster;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.lang.reflect.Method;
+import java.util.Set;
 
 public abstract class WTApi {
 

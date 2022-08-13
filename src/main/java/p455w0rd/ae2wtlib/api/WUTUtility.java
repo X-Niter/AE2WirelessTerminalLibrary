@@ -1,11 +1,10 @@
 package p455w0rd.ae2wtlib.api;
 
-import java.util.List;
-
-import org.apache.commons.lang3.tuple.Pair;
-
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import org.apache.commons.lang3.tuple.Pair;
+
+import java.util.List;
 
 /**
  * @author p455w0rd

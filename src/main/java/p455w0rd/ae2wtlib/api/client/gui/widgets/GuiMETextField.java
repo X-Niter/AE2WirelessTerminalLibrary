@@ -2,7 +2,9 @@ package p455w0rd.ae2wtlib.api.client.gui.widgets;
 
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiTextField;
-import net.minecraft.client.renderer.*;
+import net.minecraft.client.renderer.BufferBuilder;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 
 /**

@@ -1,13 +1,5 @@
 package p455w0rd.ae2wtlib.api.item;
 
-import java.util.*;
-
-import org.apache.commons.lang3.tuple.Pair;
-import org.lwjgl.input.Keyboard;
-
-import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
-
 import appeng.api.config.Actionable;
 import appeng.api.config.PowerUnits;
 import appeng.api.util.IConfigManager;
@@ -18,6 +10,8 @@ import appeng.items.tools.powered.powersink.AEBasePoweredItem;
 import appeng.util.ConfigManager;
 import appeng.util.Platform;
 import baubles.api.BaubleType;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
@@ -26,7 +20,9 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.*;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.*;
@@ -36,7 +32,12 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import p455w0rd.ae2wtlib.api.*;
+import org.apache.commons.lang3.tuple.Pair;
+import org.lwjgl.input.Keyboard;
+import p455w0rd.ae2wtlib.api.ICustomWirelessTerminalItem;
+import p455w0rd.ae2wtlib.api.WTApi;
+import p455w0rd.ae2wtlib.api.WTBaublesAccess;
+import p455w0rd.ae2wtlib.api.WTNetworkHandler;
 import p455w0rd.ae2wtlib.api.client.IBaubleRender;
 import p455w0rd.ae2wtlib.api.client.ItemStackSizeRenderer;
 import p455w0rd.ae2wtlib.api.client.render.WTItemRenderer;
@@ -45,6 +46,11 @@ import p455w0rd.ae2wtlib.init.LibConfig;
 import p455w0rd.ae2wtlib.init.LibCreativeTab;
 import p455w0rdslib.api.client.ICustomItemRenderer;
 import p455w0rdslib.api.client.ItemLayerWrapper;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
 
 /**
  * @author p455w0rd

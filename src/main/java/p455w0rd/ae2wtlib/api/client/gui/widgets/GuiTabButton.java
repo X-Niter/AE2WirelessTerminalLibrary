@@ -22,7 +22,9 @@ package p455w0rd.ae2wtlib.api.client.gui.widgets;
 import appeng.client.gui.widgets.ITooltip;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
-import net.minecraft.client.renderer.*;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.RenderHelper;
+import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 

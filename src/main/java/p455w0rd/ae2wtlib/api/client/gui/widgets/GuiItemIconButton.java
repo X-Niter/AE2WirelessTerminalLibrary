@@ -1,8 +1,5 @@
 package p455w0rd.ae2wtlib.api.client.gui.widgets;
 
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL12;
-
 import appeng.client.gui.widgets.ITooltip;
 import appeng.core.AppEng;
 import net.minecraft.client.Minecraft;
@@ -11,6 +8,8 @@ import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL12;
 
 /**
  * @author p455w0rd

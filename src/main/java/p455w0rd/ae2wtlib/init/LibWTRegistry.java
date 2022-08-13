@@ -1,23 +1,24 @@
 package p455w0rd.ae2wtlib.init;
 
-import java.util.*;
-
-import com.google.common.collect.Lists;
-
 import appeng.api.AEApi;
 import appeng.api.config.Actionable;
 import appeng.api.features.IWirelessTermHandler;
 import appeng.items.tools.powered.powersink.AEBasePoweredItem;
+import com.google.common.collect.Lists;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.common.util.Constants.NBT;
 import net.minecraftforge.fml.common.LoaderState;
 import p455w0rd.ae2wtlib.AE2WTLib;
-import p455w0rd.ae2wtlib.api.*;
+import p455w0rd.ae2wtlib.api.ICustomWirelessTerminalItem;
+import p455w0rd.ae2wtlib.api.WTApi;
+import p455w0rd.ae2wtlib.api.WTRegistry;
 import p455w0rd.ae2wtlib.api.item.ItemWT;
 import p455w0rd.ae2wtlib.helpers.IWirelessUniversalItem;
 import p455w0rd.ae2wtlib.recipe.RecipeNewTerminal;
+
+import java.util.*;
 
 /**
  * @author p455w0rd

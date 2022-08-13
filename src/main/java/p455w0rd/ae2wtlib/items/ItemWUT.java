@@ -1,20 +1,13 @@
 package p455w0rd.ae2wtlib.items;
 
-import java.util.*;
-
-import org.apache.commons.lang3.ClassUtils;
-import org.apache.commons.lang3.tuple.Pair;
-import org.lwjgl.input.Keyboard;
-
-import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
-
 import appeng.api.config.Actionable;
 import appeng.api.features.IWirelessTermHandler;
 import appeng.api.implementations.items.IAEItemPowerStorage;
 import appeng.api.storage.IStorageChannel;
 import appeng.api.util.IConfigManager;
 import appeng.items.tools.powered.powersink.AEBasePoweredItem;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -28,13 +21,23 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.util.Constants.NBT;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.ClassUtils;
+import org.apache.commons.lang3.tuple.Pair;
+import org.lwjgl.input.Keyboard;
 import p455w0rd.ae2wtlib.AE2WTLib;
 import p455w0rd.ae2wtlib.api.ICustomWirelessTerminalItem;
 import p455w0rd.ae2wtlib.api.WTApi;
 import p455w0rd.ae2wtlib.api.container.IWTContainer;
 import p455w0rd.ae2wtlib.api.item.ItemWT;
 import p455w0rd.ae2wtlib.helpers.IWirelessUniversalItem;
-import p455w0rd.ae2wtlib.init.*;
+import p455w0rd.ae2wtlib.init.LibConfig;
+import p455w0rd.ae2wtlib.init.LibItems;
+import p455w0rd.ae2wtlib.init.LibRecipes;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author p455w0rd

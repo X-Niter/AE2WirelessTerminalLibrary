@@ -1,7 +1,5 @@
 package p455w0rd.ae2wtlib.api.container.slot;
 
-import javax.annotation.Nonnull;
-
 import appeng.container.AEBaseContainer;
 import appeng.container.slot.AppEngSlot;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,6 +14,8 @@ import p455w0rd.ae2wtlib.api.container.ContainerWT;
 import p455w0rd.ae2wtlib.init.LibItems;
 import p455w0rd.ae2wtlib.init.LibNetworking;
 import p455w0rd.ae2wtlib.sync.packets.PacketSyncInfinityEnergy;
+
+import javax.annotation.Nonnull;
 
 /**
  * @author p455w0rd

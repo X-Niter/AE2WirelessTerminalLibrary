@@ -1,14 +1,13 @@
 package p455w0rd.ae2wtlib.api;
 
-import java.util.Set;
-
-import org.apache.commons.lang3.tuple.Pair;
-
 import baubles.api.cap.IBaublesItemHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
+import org.apache.commons.lang3.tuple.Pair;
 import p455w0rd.ae2wtlib.api.container.ContainerWT;
+
+import java.util.Set;
 
 /**
  * @author p455w0rd

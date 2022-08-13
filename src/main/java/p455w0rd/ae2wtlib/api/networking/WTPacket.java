@@ -1,13 +1,15 @@
 package p455w0rd.ae2wtlib.api.networking;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.network.*;
+import net.minecraft.network.INetHandler;
+import net.minecraft.network.Packet;
+import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fml.common.network.internal.FMLProxyPacket;
 import p455w0rd.ae2wtlib.init.LibNetworking;
+
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 
 public abstract class WTPacket implements Packet<INetHandler> {
 

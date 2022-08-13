@@ -1,7 +1,9 @@
 package p455w0rd.ae2wtlib.api.client;
 
 import java.math.RoundingMode;
-import java.text.*;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.Format;
 
 /**
  * Converter class to convert a large number into a SI system.

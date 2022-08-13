@@ -1,8 +1,5 @@
 package p455w0rd.ae2wtlib.client.render;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import baubles.api.BaublesApi;
 import baubles.api.cap.IBaublesItemHandler;
 import net.minecraft.client.entity.AbstractClientPlayer;
@@ -11,6 +8,9 @@ import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.item.ItemStack;
 import p455w0rd.ae2wtlib.api.client.IBaubleItem;
 import p455w0rd.ae2wtlib.api.client.IBaubleRender;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * from EnderIO

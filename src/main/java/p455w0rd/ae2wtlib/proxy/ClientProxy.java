@@ -1,6 +1,8 @@
 package p455w0rd.ae2wtlib.proxy;
 
-import net.minecraftforge.fml.common.event.*;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import p455w0rdslib.api.client.IModelHolder;
 import p455w0rdslib.api.client.ItemRenderingRegistry;
 

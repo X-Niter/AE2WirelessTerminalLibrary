@@ -1,10 +1,6 @@
 package p455w0rd.ae2wtlib.recipe;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.google.common.collect.Lists;
-
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -12,10 +8,15 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
-import p455w0rd.ae2wtlib.api.*;
+import p455w0rd.ae2wtlib.api.ICustomWirelessTerminalItem;
+import p455w0rd.ae2wtlib.api.IWUTRecipe;
+import p455w0rd.ae2wtlib.api.WTApi;
 import p455w0rd.ae2wtlib.init.LibItems;
 import p455w0rd.ae2wtlib.init.LibRecipes;
 import p455w0rd.ae2wtlib.items.ItemWUT;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author p455w0rd
@@ -26,8 +27,8 @@ public class RecipeAddTerminal extends net.minecraftforge.registries.IForgeRegis
 	private static List<RecipeAddTerminal> REGISTRY = new ArrayList<>();
 	private static int c = 0;
 
-	ItemStack wut = ItemStack.EMPTY;
-	ItemStack terminalB = ItemStack.EMPTY;
+	ItemStack wut;
+	ItemStack terminalB;
 	ItemStack output = ItemStack.EMPTY;
 
 	public RecipeAddTerminal(final ItemStack wut, final ItemStack terminalB) {

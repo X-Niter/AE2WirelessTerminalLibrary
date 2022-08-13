@@ -1,6 +1,8 @@
 package p455w0rd.ae2wtlib.integration;
 
-import mezz.jei.api.*;
+import mezz.jei.api.IModPlugin;
+import mezz.jei.api.IModRegistry;
+import mezz.jei.api.JEIPlugin;
 import mezz.jei.api.ingredients.VanillaTypes;
 import mezz.jei.api.recipe.VanillaRecipeCategoryUid;
 import mezz.jei.plugins.vanilla.crafting.ShapelessRecipeWrapper;

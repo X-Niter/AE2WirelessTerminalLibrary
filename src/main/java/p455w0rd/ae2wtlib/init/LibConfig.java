@@ -1,13 +1,13 @@
 package p455w0rd.ae2wtlib.init;
 
-import java.io.File;
-
 import appeng.core.AEConfig;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import p455w0rd.ae2wtlib.api.WTApi;
+
+import java.io.File;
 
 /**
  * @author p455w0rd

@@ -1,7 +1,5 @@
 package p455w0rd.ae2wtlib.api;
 
-import java.util.List;
-
 import appeng.api.implementations.guiobjects.IGuiItemObject;
 import appeng.api.implementations.tiles.IWirelessAccessPoint;
 import appeng.api.networking.IGrid;
@@ -14,6 +12,8 @@ import appeng.api.util.AECableType;
 import appeng.api.util.AEPartLocation;
 import appeng.container.interfaces.IInventorySlotAware;
 import p455w0rd.ae2wtlib.api.networking.security.WTIActionHost;
+
+import java.util.List;
 
 /**
  * @author p455w0rd

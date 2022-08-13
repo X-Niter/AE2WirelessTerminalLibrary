@@ -4,7 +4,9 @@ import net.minecraft.item.Item;
 import net.minecraftforge.event.RegistryEvent;
 import p455w0rd.ae2wtlib.AE2WTLib;
 import p455w0rd.ae2wtlib.api.WTApi;
-import p455w0rd.ae2wtlib.items.*;
+import p455w0rd.ae2wtlib.items.ItemInfinityBooster;
+import p455w0rd.ae2wtlib.items.ItemWUT;
+import p455w0rd.ae2wtlib.items.ItemWUTCreative;
 
 /**
  * @author p455w0rd

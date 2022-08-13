@@ -1,38 +1,33 @@
 package p455w0rd.ae2wtlib.api.client.gui;
 
-import java.io.IOException;
-import java.text.*;
-import java.util.*;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
-import org.lwjgl.input.Keyboard;
-import org.lwjgl.input.Mouse;
-import org.lwjgl.opengl.GL11;
-
+import appeng.api.storage.data.IAEItemStack;
+import appeng.client.gui.widgets.ITooltip;
+import appeng.client.me.InternalSlotME;
+import appeng.client.me.SlotDisconnected;
+import appeng.client.me.SlotME;
+import appeng.container.slot.*;
+import appeng.container.slot.AppEngSlot.hasCalculatedValidness;
+import appeng.core.AEConfig;
+import appeng.core.localization.ButtonToolTips;
 import com.google.common.base.Joiner;
 import com.google.common.base.Stopwatch;
 import com.google.common.collect.Lists;
-
-import appeng.api.storage.data.IAEItemStack;
-import appeng.client.gui.widgets.ITooltip;
-import appeng.client.me.*;
-import appeng.container.slot.*;
-import appeng.container.slot.AppEngSlot.hasCalculatedValidness;
-import appeng.container.slot.OptionalSlotFake;
-import appeng.core.AEConfig;
-import appeng.core.localization.ButtonToolTips;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.client.renderer.*;
+import net.minecraft.client.renderer.BufferBuilder;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.RenderHelper;
+import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.*;
+import net.minecraft.inventory.ClickType;
+import net.minecraft.inventory.Container;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
@@ -41,6 +36,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
+import org.lwjgl.input.Keyboard;
+import org.lwjgl.input.Mouse;
+import org.lwjgl.opengl.GL11;
 import p455w0rd.ae2wtlib.api.ICustomWirelessTerminalItem;
 import p455w0rd.ae2wtlib.api.WTApi;
 import p455w0rd.ae2wtlib.api.client.IWTGuiScrollbar;
@@ -56,6 +54,14 @@ import p455w0rd.ae2wtlib.init.LibNetworking;
 import p455w0rd.ae2wtlib.items.ItemWUT;
 import p455w0rd.ae2wtlib.sync.packets.PacketSwitchWutTerminalGui;
 import p455w0rdslib.util.EasyMappings;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.*;
 
 public abstract class GuiWT extends GuiContainer {
 

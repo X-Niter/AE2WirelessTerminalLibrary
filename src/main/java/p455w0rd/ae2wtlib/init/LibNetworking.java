@@ -1,7 +1,5 @@
 package p455w0rd.ae2wtlib.init;
 
-import java.util.UUID;
-
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.network.NetHandlerPlayServer;
 import net.minecraftforge.common.MinecraftForge;
@@ -15,7 +13,12 @@ import p455w0rd.ae2wtlib.api.networking.IPacketHandler;
 import p455w0rd.ae2wtlib.api.networking.WTPacket;
 import p455w0rd.ae2wtlib.sync.network.WTClientPacketHandler;
 import p455w0rd.ae2wtlib.sync.network.WTServerPacketHandler;
-import p455w0rd.ae2wtlib.sync.packets.*;
+import p455w0rd.ae2wtlib.sync.packets.PacketEmptyTrash;
+import p455w0rd.ae2wtlib.sync.packets.PacketSetAutoConsumeBoosters;
+import p455w0rd.ae2wtlib.sync.packets.PacketSetInRange;
+import p455w0rd.ae2wtlib.sync.packets.PacketSyncInfinityEnergy;
+
+import java.util.UUID;
 
 public class LibNetworking extends WTNetworkHandler {
 

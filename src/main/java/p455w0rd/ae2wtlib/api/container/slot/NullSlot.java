@@ -1,10 +1,10 @@
 package p455w0rd.ae2wtlib.api.container.slot;
 
-import javax.annotation.Nonnull;
-
 import appeng.container.slot.AppEngSlot;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+
+import javax.annotation.Nonnull;
 
 public class NullSlot extends AppEngSlot {
 

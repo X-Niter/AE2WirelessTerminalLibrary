@@ -1,10 +1,10 @@
 package p455w0rd.ae2wtlib.api.client.gui.widgets;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import net.minecraft.client.gui.GuiButton;
 import p455w0rd.ae2wtlib.api.client.gui.GuiWT;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author p455w0rd

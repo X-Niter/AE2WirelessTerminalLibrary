@@ -19,12 +19,12 @@
 
 package p455w0rd.ae2wtlib.api.container.slot;
 
-import javax.annotation.Nonnull;
-
 import appeng.container.slot.IOptionalSlot;
 import appeng.container.slot.SlotFake;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
+
+import javax.annotation.Nonnull;
 
 public class OptionalSlotFake extends SlotFake implements IOptionalSlot {
 

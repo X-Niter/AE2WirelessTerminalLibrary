@@ -1,9 +1,6 @@
 package p455w0rd.ae2wtlib.items;
 
-import java.util.List;
-
 import com.google.common.collect.Lists;
-
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.client.util.ITooltipFlag.TooltipFlags;
@@ -16,6 +13,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import p455w0rd.ae2wtlib.api.WTApi;
 import p455w0rd.ae2wtlib.api.item.ItemBase;
 import p455w0rd.ae2wtlib.init.LibConfig;
+
+import java.util.List;
 
 /**
  * @author p455w0rd

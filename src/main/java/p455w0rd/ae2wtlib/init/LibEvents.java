@@ -1,10 +1,5 @@
 package p455w0rd.ae2wtlib.init;
 
-import java.util.Random;
-import java.util.Set;
-
-import org.apache.commons.lang3.tuple.Pair;
-
 import appeng.tile.networking.TileController;
 import net.minecraft.entity.boss.EntityDragon;
 import net.minecraft.entity.boss.EntityWither;
@@ -32,6 +27,7 @@ import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerLoggedInEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.tuple.Pair;
 import p455w0rd.ae2wtlib.AE2WTLib;
 import p455w0rd.ae2wtlib.api.WTApi;
 import p455w0rd.ae2wtlib.api.networking.WTPacket;
@@ -41,6 +37,9 @@ import p455w0rd.ae2wtlib.sync.packets.PacketSyncInfinityEnergy;
 import p455w0rdslib.LibGlobals.Mods;
 import p455w0rdslib.capabilities.CapabilityChunkLoader;
 import p455w0rdslib.capabilities.CapabilityChunkLoader.ProviderTE;
+
+import java.util.Random;
+import java.util.Set;
 
 /**
  * @author p455w0rd

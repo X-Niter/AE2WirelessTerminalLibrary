@@ -1,22 +1,10 @@
 package p455w0rd.ae2wtlib.init;
 
-import static p455w0rd.ae2wtlib.init.LibConfig.INFINITY_ENERGY_DRAIN;
-import static p455w0rd.ae2wtlib.init.LibConfig.INFINITY_ENERGY_PER_BOOSTER_CARD;
-
-import java.util.*;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-
-import org.apache.commons.lang3.ClassUtils;
-import org.apache.commons.lang3.tuple.Pair;
-
-import com.google.common.collect.Sets;
-
 import appeng.api.implementations.tiles.IWirelessAccessPoint;
 import appeng.container.slot.AppEngSlot;
 import appeng.tile.inventory.AppEngInternalInventory;
 import appeng.util.inv.IAEAppEngInventory;
+import com.google.common.collect.Sets;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -31,6 +19,8 @@ import net.minecraftforge.fml.common.LoaderState;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandler;
+import org.apache.commons.lang3.ClassUtils;
+import org.apache.commons.lang3.tuple.Pair;
 import p455w0rd.ae2wtlib.AE2WTLib;
 import p455w0rd.ae2wtlib.api.*;
 import p455w0rd.ae2wtlib.api.client.IWTGuiScrollbar;
@@ -45,6 +35,15 @@ import p455w0rd.ae2wtlib.items.ItemInfinityBooster;
 import p455w0rd.ae2wtlib.items.ItemWUT;
 import p455w0rd.ae2wtlib.sync.packets.PacketSyncInfinityEnergy;
 import p455w0rdslib.LibGlobals.Mods;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+import static p455w0rd.ae2wtlib.init.LibConfig.INFINITY_ENERGY_DRAIN;
+import static p455w0rd.ae2wtlib.init.LibConfig.INFINITY_ENERGY_PER_BOOSTER_CARD;
 
 /**
  * @author p455w0rd

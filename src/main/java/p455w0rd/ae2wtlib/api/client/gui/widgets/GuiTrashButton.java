@@ -1,13 +1,12 @@
 package p455w0rd.ae2wtlib.api.client.gui.widgets;
 
-import org.lwjgl.opengl.GL11;
-
 import appeng.client.gui.widgets.ITooltip;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
+import org.lwjgl.opengl.GL11;
 
 /**
  * @author p455w0rd

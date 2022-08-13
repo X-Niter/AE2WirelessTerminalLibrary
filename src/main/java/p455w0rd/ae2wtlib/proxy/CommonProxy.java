@@ -1,9 +1,13 @@
 package p455w0rd.ae2wtlib.proxy;
 
 import net.minecraftforge.fml.common.LoaderState;
-import net.minecraftforge.fml.common.event.*;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import p455w0rd.ae2wtlib.AE2WTLib;
-import p455w0rd.ae2wtlib.init.*;
+import p455w0rd.ae2wtlib.init.LibConfig;
+import p455w0rd.ae2wtlib.init.LibNetworking;
+import p455w0rd.ae2wtlib.init.LibWTRegistry;
 import p455w0rdslib.api.client.IModelHolder;
 import p455w0rdslib.util.ChunkUtils;
 

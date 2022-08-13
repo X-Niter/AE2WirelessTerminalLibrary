@@ -1,7 +1,5 @@
 package p455w0rd.ae2wtlib.api.container.slot;
 
-import javax.annotation.Nonnull;
-
 import appeng.container.slot.AppEngSlot;
 import baubles.api.IBauble;
 import net.minecraft.entity.player.EntityPlayer;
@@ -9,6 +7,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
 import p455w0rd.ae2wtlib.api.ICustomWirelessTerminalItem;
 import p455w0rd.ae2wtlib.api.container.ContainerWT;
+
+import javax.annotation.Nonnull;
 
 /**
  * @author p455w0rd

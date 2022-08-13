@@ -1,11 +1,9 @@
 package p455w0rd.ae2wtlib.api.container;
 
-import java.util.*;
-
-import javax.annotation.Nonnull;
-
 import appeng.api.AEApi;
-import appeng.api.config.*;
+import appeng.api.config.Actionable;
+import appeng.api.config.PowerMultiplier;
+import appeng.api.config.SecurityPermissions;
 import appeng.api.features.IWirelessTermHandler;
 import appeng.api.networking.IGrid;
 import appeng.api.networking.energy.IEnergyGrid;
@@ -18,14 +16,18 @@ import appeng.client.me.InternalSlotME;
 import appeng.container.AEBaseContainer;
 import appeng.container.guisync.GuiSync;
 import appeng.container.guisync.SyncData;
-import appeng.container.slot.*;
+import appeng.container.slot.AppEngSlot;
+import appeng.container.slot.SlotDisabled;
+import appeng.container.slot.SlotInaccessible;
 import appeng.core.AEConfig;
 import appeng.helpers.InventoryAction;
 import appeng.util.IConfigManagerHost;
 import appeng.util.Platform;
 import appeng.util.inv.IAEAppEngInventory;
 import appeng.util.inv.InvOperation;
-import net.minecraft.entity.player.*;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.IContainerListener;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
@@ -34,14 +36,19 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.wrapper.PlayerInvWrapper;
-import p455w0rd.ae2wtlib.api.*;
+import p455w0rd.ae2wtlib.api.ICustomWirelessTerminalItem;
+import p455w0rd.ae2wtlib.api.WTApi;
+import p455w0rd.ae2wtlib.api.WTGuiObject;
 import p455w0rd.ae2wtlib.api.container.slot.*;
-import p455w0rd.ae2wtlib.api.container.slot.SlotPlayerHotBar;
-import p455w0rd.ae2wtlib.api.container.slot.SlotPlayerInv;
 import p455w0rd.ae2wtlib.api.inventory.WTInventoryBooster;
 import p455w0rd.ae2wtlib.api.networking.security.WTIActionHost;
 import p455w0rd.ae2wtlib.api.networking.security.WTPlayerSource;
 import p455w0rdslib.LibGlobals.Mods;
+
+import javax.annotation.Nonnull;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 
 public class ContainerWT extends AEBaseContainer implements IWTContainer, IConfigurableObject, IConfigManagerHost, IAEAppEngInventory {
 

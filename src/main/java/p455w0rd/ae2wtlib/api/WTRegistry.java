@@ -1,9 +1,9 @@
 package p455w0rd.ae2wtlib.api;
 
+import net.minecraft.item.ItemStack;
+
 import java.util.List;
 import java.util.Map;
-
-import net.minecraft.item.ItemStack;
 
 /**
  * @author p455w0rd

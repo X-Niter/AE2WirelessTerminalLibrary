@@ -1,20 +1,11 @@
 package p455w0rd.ae2wtlib.client.gui;
 
-import java.awt.Color;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.commons.lang3.tuple.Pair;
-import org.lwjgl.input.Mouse;
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.util.vector.Vector2f;
-
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
-
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.*;
+import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.settings.GameSettings;
@@ -23,9 +14,18 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.fml.client.config.GuiUtils;
+import org.apache.commons.lang3.tuple.Pair;
+import org.lwjgl.input.Mouse;
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.util.vector.Vector2f;
 import p455w0rd.ae2wtlib.api.ICustomWirelessTerminalItem;
 import p455w0rd.ae2wtlib.api.WTApi;
 import p455w0rd.ae2wtlib.items.ItemWUT;
+
+import java.awt.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author p455w0rd

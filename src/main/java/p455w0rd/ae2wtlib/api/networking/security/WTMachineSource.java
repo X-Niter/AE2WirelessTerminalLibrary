@@ -1,10 +1,10 @@
 package p455w0rd.ae2wtlib.api.networking.security;
 
-import java.util.Optional;
-
 import appeng.api.networking.security.IActionHost;
 import appeng.api.networking.security.IActionSource;
 import net.minecraft.entity.player.EntityPlayer;
+
+import java.util.Optional;
 
 public class WTMachineSource implements IActionSource {
 

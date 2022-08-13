@@ -2,7 +2,6 @@ package p455w0rd.ae2wtlib.sync.network;
 
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.network.INetHandler;
 import net.minecraft.network.PacketThreadUtil;
 import net.minecraftforge.fml.common.network.internal.FMLProxyPacket;

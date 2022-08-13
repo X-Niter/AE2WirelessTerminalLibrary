@@ -1,14 +1,16 @@
 package p455w0rd.ae2wtlib.init;
 
-import java.util.List;
-
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.event.RegistryEvent;
-import p455w0rd.ae2wtlib.api.*;
+import p455w0rd.ae2wtlib.api.ICustomWirelessTerminalItem;
+import p455w0rd.ae2wtlib.api.IWUTRecipe;
+import p455w0rd.ae2wtlib.api.WTApi;
 import p455w0rd.ae2wtlib.recipe.RecipeAddTerminal;
 import p455w0rd.ae2wtlib.recipe.RecipeNewTerminal;
+
+import java.util.List;
 
 /**
  * @author p455w0rd

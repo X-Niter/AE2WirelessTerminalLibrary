@@ -1,7 +1,5 @@
 package p455w0rd.ae2wtlib.api.item;
 
-import org.lwjgl.input.Keyboard;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -10,6 +8,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.lwjgl.input.Keyboard;
 import p455w0rd.ae2wtlib.init.LibCreativeTab;
 import p455w0rdslib.api.client.IModelHolder;
 

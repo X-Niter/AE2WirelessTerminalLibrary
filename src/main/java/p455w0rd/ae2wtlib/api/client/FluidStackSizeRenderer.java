@@ -1,13 +1,13 @@
 package p455w0rd.ae2wtlib.api.client;
 
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-
 import appeng.api.storage.data.IAEFluidStack;
 import appeng.core.AEConfig;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.GlStateManager;
+
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 
 /**
  * @author p455w0rd

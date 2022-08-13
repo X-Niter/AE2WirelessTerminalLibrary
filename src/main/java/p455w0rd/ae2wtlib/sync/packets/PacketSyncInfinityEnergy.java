@@ -15,8 +15,6 @@
  */
 package p455w0rd.ae2wtlib.sync.packets;
 
-import java.util.UUID;
-
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import net.minecraft.client.Minecraft;
@@ -29,6 +27,8 @@ import p455w0rd.ae2wtlib.api.client.gui.GuiWT;
 import p455w0rd.ae2wtlib.api.container.ContainerWT;
 import p455w0rd.ae2wtlib.api.networking.INetworkInfo;
 import p455w0rd.ae2wtlib.api.networking.WTPacket;
+
+import java.util.UUID;
 
 /**
  * @author p455w0rd

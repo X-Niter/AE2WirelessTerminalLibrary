@@ -1,10 +1,10 @@
 package p455w0rd.ae2wtlib.api;
 
-import java.util.UUID;
-
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import p455w0rd.ae2wtlib.api.networking.WTPacket;
+
+import java.util.UUID;
 
 /**
  * @author p455w0rd

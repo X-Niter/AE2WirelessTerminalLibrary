@@ -1,9 +1,5 @@
 package p455w0rd.ae2wtlib.api.client.render;
 
-import java.util.*;
-
-import javax.annotation.Nonnull;
-
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.*;
@@ -23,7 +19,14 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.pipeline.LightUtil;
 import p455w0rd.ae2wtlib.api.ICustomWirelessTerminalItem;
-import p455w0rdslib.api.client.*;
+import p455w0rdslib.api.client.ICustomItemRenderer;
+import p455w0rdslib.api.client.IModelHolder;
+import p455w0rdslib.api.client.ItemLayerWrapper;
+
+import javax.annotation.Nonnull;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author p455w0rd

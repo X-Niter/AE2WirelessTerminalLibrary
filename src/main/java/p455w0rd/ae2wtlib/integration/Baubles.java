@@ -1,27 +1,27 @@
 package p455w0rd.ae2wtlib.integration;
 
-import java.util.List;
-import java.util.Set;
-
-import org.apache.commons.lang3.ClassUtils;
-import org.apache.commons.lang3.tuple.Pair;
-
-import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
-
 import baubles.api.IBauble;
 import baubles.api.cap.BaublesCapabilities;
 import baubles.api.cap.IBaublesItemHandler;
 import baubles.common.container.SlotBauble;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-import p455w0rd.ae2wtlib.api.*;
+import org.apache.commons.lang3.ClassUtils;
+import org.apache.commons.lang3.tuple.Pair;
+import p455w0rd.ae2wtlib.api.ICustomWirelessTerminalItem;
+import p455w0rd.ae2wtlib.api.WTApi;
+import p455w0rd.ae2wtlib.api.WTBaublesAccess;
 import p455w0rd.ae2wtlib.api.container.ContainerWT;
 import p455w0rd.ae2wtlib.api.container.slot.SlotAEBauble;
 import p455w0rd.ae2wtlib.init.LibNetworking;
 import p455w0rd.ae2wtlib.sync.packets.PacketBaubleSync;
+
+import java.util.List;
+import java.util.Set;
 
 /**
  * @author p455w0rd
